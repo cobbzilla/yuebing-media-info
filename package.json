@@ -1,6 +1,6 @@
 {
   "name": "yuebing-media-info",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "type": "module",
   "description": "Mediainfo driver for yuebing content",
   "keywords": [
@@ -42,7 +42,7 @@
     "prettier": "^3.0.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^5.1.6",
-    "yuebing-media": "^1.1.23",
-    "yuebing-model": "^2.7.27"
+    "yuebing-media": "^1.1.24",
+    "yuebing-model": "^2.7.28"
   }
 }
