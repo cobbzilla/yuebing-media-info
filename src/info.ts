@@ -1,5 +1,5 @@
 import { ApplyProfileResponse, MediaPlugin, ParsedProfile } from "yuebing-media";
-import { OP_MAP, OPERATIONS } from "./operations.js";
+import { OP_MAP, OPERATIONS, DEFAULT_PROFILES } from "./common.js";
 
 export const mediaDriver: MediaPlugin = {
     applyProfile: async (
@@ -20,4 +20,5 @@ export const mediaDriver: MediaPlugin = {
     },
     operations: OPERATIONS,
     operationConfigType: () => undefined,
+    defaultProfiles: DEFAULT_PROFILES,
 };

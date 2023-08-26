@@ -1,5 +1,5 @@
 import { ApplyProfileResponse, MediaOperationFunc, MediaOperationType } from "yuebing-media";
-import { OP_MAP, OPERATIONS } from "../operations.js";
+import { OP_MAP, OPERATIONS, DEFAULT_PROFILES } from "../common.js";
 
 export const InfoMediainfoOperation: MediaOperationType = {
     name: "mediainfo",
@@ -13,3 +13,10 @@ export const mediainfo: MediaOperationFunc = async (infile: string): Promise<App
     return { args: ["--Output=JSON", "--Full", infile] };
 };
 OP_MAP.mediainfo = mediainfo;
+
+DEFAULT_PROFILES.push({
+    name: "mediainfo",
+    operation: "mediainfo",
+    ext: "json",
+    contentType: "application/json",
+});
