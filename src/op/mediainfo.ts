@@ -1,5 +1,5 @@
 import { ApplyProfileResponse, MediaOperationFunc, MediaOperationType } from "yuebing-media";
-import { OP_MAP, OPERATIONS, DEFAULT_PROFILES } from "../common.js";
+import { MediaProfileType } from "yuebing-model";
 
 export const InfoMediainfoOperation: MediaOperationType = {
     name: "mediainfo",
@@ -14,7 +14,11 @@ export const mediainfo: MediaOperationFunc = async (infile: string): Promise<App
 
 let loaded = false;
 
-export const load = () => {
+export const load = (
+    OPERATIONS: Record<string, MediaOperationType>,
+    OP_MAP: Record<string, MediaOperationFunc>,
+    DEFAULT_PROFILES: MediaProfileType[],
+) => {
     if (loaded) return;
     loaded = true;
 
