@@ -12,7 +12,11 @@ export const mediainfo: MediaOperationFunc = async (infile: string): Promise<App
     return { args: ["--Output=JSON", "--Full", infile] };
 };
 
+let loaded = false;
 export const load = () => {
+    if (loaded) return;
+    loaded = true;
+
     OPERATIONS.mediainfo = InfoMediainfoOperation;
     OP_MAP.mediainfo = mediainfo;
 
