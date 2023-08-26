@@ -7,16 +7,19 @@ export const InfoMediainfoOperation: MediaOperationType = {
     analysis: true,
     minFileSize: 64, // 64 bytes, very conservative. Even an essentially empty file clocks in just over 2k
 };
-OPERATIONS.mediainfo = InfoMediainfoOperation;
 
 export const mediainfo: MediaOperationFunc = async (infile: string): Promise<ApplyProfileResponse> => {
     return { args: ["--Output=JSON", "--Full", infile] };
 };
-OP_MAP.mediainfo = mediainfo;
 
-DEFAULT_PROFILES.push({
-    name: "mediainfo",
-    operation: "mediainfo",
-    ext: "json",
-    contentType: "application/json",
-});
+export const load = () => {
+    OPERATIONS.mediainfo = InfoMediainfoOperation;
+    OP_MAP.mediainfo = mediainfo;
+
+    DEFAULT_PROFILES.push({
+        name: "mediainfo",
+        operation: "mediainfo",
+        ext: "json",
+        contentType: "application/json",
+    });
+};
