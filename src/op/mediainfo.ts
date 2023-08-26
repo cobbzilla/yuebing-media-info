@@ -13,6 +13,7 @@ export const mediainfo: MediaOperationFunc = async (infile: string): Promise<App
 };
 
 let loaded = false;
+
 export const load = () => {
     if (loaded) return;
     loaded = true;
