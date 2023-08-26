@@ -1,7 +1,7 @@
 import { ApplyProfileResponse, MediaPlugin, ParsedProfile } from "yuebing-media";
 import { OP_MAP, OPERATIONS, DEFAULT_PROFILES } from "./common.js";
 
-export const mediaDriver: MediaPlugin = {
+export const mediaPlugin: MediaPlugin = {
     applyProfile: async (
         downloaded: string,
         profile: ParsedProfile,
