@@ -1,3 +1,4 @@
+import { MobilettoLogger } from "mobiletto-base";
 import { ApplyProfileResponse, MediaOperationFunc, MediaOperationType } from "yuebing-media";
 import { MediaProfileType } from "yuebing-model";
 
@@ -8,7 +9,10 @@ export const InfoMediainfoOperation: MediaOperationType = {
     minFileSize: 64, // 64 bytes, very conservative. Even an essentially empty file clocks in just over 2k
 };
 
-export const mediainfo: MediaOperationFunc = async (infile: string): Promise<ApplyProfileResponse> => {
+export const mediainfo: MediaOperationFunc = async (
+    logger: MobilettoLogger,
+    infile: string,
+): Promise<ApplyProfileResponse> => {
     return { args: ["--Output=JSON", "--Full", infile] };
 };
 
